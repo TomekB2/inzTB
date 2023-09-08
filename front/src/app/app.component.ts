@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'front';
+  constructor(
+    private http: HttpClient) { }
+  title = 'back';
+  configUrl = '/api/WeatherForecast';
+
+  tomek = this.getHeroes().subscribe();
+  getHeroes() {
+    return this.http.get<string>(this.configUrl);
+  }
 }
