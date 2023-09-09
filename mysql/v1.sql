@@ -1,12 +1,7 @@
-USE first_db;
-
-CREATE TABLE Department(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-    name VARCHAR(30) NOT NULL);
-
-CREATE TABLE Employees(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-    name VARCHAR(30) NOT NULL,
-    department_id INT(6) NOT NULL);
-
-INSERT INTO Department (name) VALUES ("Fire");
-
-SELECT * FROM Department; 
+Create table Users       
+(  
+   Id int(50) primary key not null,
+   UserId varchar(50) not null,   
+   Password varchar(100) not null    
+)    
+insert into Users (Id, UserId, Password) Values (1, 'tomek', 'tomek')
